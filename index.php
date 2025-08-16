@@ -1,16 +1,7 @@
-<div id="slider">sono la index</div>
-
 <?php get_header();
  ?>
 
-<div id="content" >
-    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-        <article>
-            <h2><?php the_title(); ?></h2>
-            <?php the_content(); ?>
-        </article>
-    <?php endwhile; endif; ?>
-</div>
+<div id="slider">sono la index o pagina di fallback</div>
 
 <?php get_footer();
  ?>

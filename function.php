@@ -8,3 +8,20 @@ function mio_tema_enqueue() {
     );
 }
 add_action('wp_enqueue_scripts', 'mio_tema_enqueue');
+
+function mio_enqueue_assets() {
+    wp_enqueue_style(
+        'mio-main-style',
+        get_template_directory_uri() . '/assets/css/main.css',
+        array(),
+        '1.0'
+    );
+    wp_enqueue_script(
+        'mio-main-js',
+        get_template_directory_uri() . '/assets/js/main.js',
+        array(),
+        '1.0',
+        true
+    );
+}
+add_action('wp_enqueue_scripts', 'mio_enqueue_assets');
