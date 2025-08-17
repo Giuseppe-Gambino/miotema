@@ -1,5 +1,3 @@
-<ul>
-    <li>ciao</li>
-    <li>cavolo</li>
-    <li>lolo</li>
-</ul>
+<nav>
+    <?php wp_nav_menu(array('theme_location' => 'menu-principale')); ?>
+</nav>

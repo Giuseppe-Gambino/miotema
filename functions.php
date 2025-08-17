@@ -1,20 +1,19 @@
 <?php
 function mio_tema_enqueue() {
+    
+
     wp_enqueue_style(
         'mio-stile', 
         get_template_directory_uri() . '/style.css', 
         array(), 
         '1.0'
     );
-}
-add_action('wp_enqueue_scripts', 'mio_tema_enqueue');
 
-function mio_enqueue_assets() {
     wp_enqueue_style(
         'mio-main-style',
         get_template_directory_uri() . '/assets/css/main.css',
         array(),
-        '1.0'
+        filemtime(get_template_directory_uri() . '/assets/css/main.css')
     );
     wp_enqueue_script(
         'mio-main-js',
@@ -24,4 +23,6 @@ function mio_enqueue_assets() {
         true
     );
 }
-add_action('wp_enqueue_scripts', 'mio_enqueue_assets');
+
+add_action('wp_enqueue_scripts', 'mio_tema_enqueue');
+?>
